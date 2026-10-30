@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon India - Homepage</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #e3e6e6;
+}
+
+/* AMAZON HEADER */
+
+header {
+    background: #131921;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #ff9900;
+    font-size: 16px;
+}
+
+.location {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.location small {
+    color: #ccc;
+}
+
+/* AMAZON SEARCH BAR */
+
+.search-bar {
+    display: flex;
+    flex: 1;
+    height: 42px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar:focus-within {
+    outline: 3px solid #ff9900;
+}
+
+.search-bar select {
+    background: #e6e6e6;
+    border: none;
+    padding: 0 10px;
+    color: #333;
+}
+
+.search-bar input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.search-bar button {
+    background: #febd69;
+    border: none;
+    width: 52px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background: #f3a847;
+}
+
+.header-link {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.header-link strong {
+    font-size: 14px;
+}
+
+.cart {
+    font-size: 19px;
+    white-space: nowrap;
+}
+
+/* NAVBAR */
+
+nav {
+    background: #232f3e;
+    color: white;
+    display: flex;
+    gap: 25px;
+    padding: 12px 20px;
+    overflow-x: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO BANNER */
+
+.hero {
+    background: linear-gradient(110deg, #b8e0ff, #fbe3c1);
+    min-height: 230px;
+    padding: 50px 8%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #444;
+}
+
+/* FOUR PRODUCT CARDS */
+
+.products {
+    max-width: 1400px;
+    margin: -25px auto 40px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 3px 12px #00000015;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #00000025;
+}
+
+.card h2 {
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 18px;
+    color: #007185;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.card a:hover {
+    color: #8b603e;
+    text-decoration: underline;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0f57af;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        order: 5;
+        flex-basis: 100%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        gap: 12px;
+    }
+
+    .location,
+    .header-link {
+        display: none;
+    }
+
+    .search-bar {
+        min-width: 100%;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .products {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+    }
+
+    .card img {
+        height: 140px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        amazon<span>.in</span>
+    </div>
+
+    <div class="location">
+        <small>Delivering to India</small>
+        <br>
+        <strong>📍 Update location</strong>
+    </div>
+
+    <div class="search-bar">
+        <select aria-label="Search category">
+            <option>All</option>
+            <option>Electronics</option>
+            <option>Fashion</option>
+            <option>Mobiles</option>
+            <option>Home</option>
+        </select>
+
+        <input type="search"
+               placeholder="Search Amazon.in"
+               aria-label="Search Amazon">
+
+        <button type="button"
+                aria-label="Search demo">🔍</button>
+    </div>
+
+    <div class="header-link">
+        Hello, sign in
+        <br>
+        <strong>Account &amp; Lists</strong>
+    </div>
+
+    <div class="header-link">
+        Returns
+        <br>
+        <strong>&amp; Orders</strong>
+    </div>
+
+    <div class="cart">
+        🛒 Cart
+    </div>
+
+</header>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <a href="#products">☰ All</a>
+    <a href="#products">prime video</a>
+    <a href="#products">mobiles</a>
+    <a href="#products">Today's Deals</a>
+    <a href="#products">coupons</a>
+    <a href="#products">Prime</a>
+    <a href="#products">Electronics</a>
+    <a href="#products">Fashion</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+    <h1>Welcome to Amazon India</h1>
+    <p>Shop top categories at amazing prices!</p>
+</section>
+
+<!-- EXACTLY FOUR CARDS -->
+
+<main class="products" id="products">
+
+    <article class="card">
+        <h2>Electronics &amp; Accessories</h2>
+
+        <img
+            src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=600&q=80"
+            alt="Electronics">
+
+        <a href="#products">See more</a>
+    </article>
+
+    <article class="card">
+        <h2>Fashion &amp; Clothing</h2>
+
+        <img
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80"
+            alt="Fashion">
+
+        <a href="#products">See more</a>
+    </article>
+
+    <article class="card">
+        <h2>Mobiles &amp; Gadgets</h2>
+
+        <img
+            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80"
+            alt="Smartphones">
+
+        <a href="#products">See more</a>
+    </article>
+
+    <article class="card">
+        <h2>Home &amp; Kitchen</h2>
+
+        <img
+            src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80"
+            alt="Home and Kitchen">
+
+        <a href="#products">See more</a>
+    </article>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>© 2026 Amazon India Inspired Homepage | Educational Demo</p>
+</footer>
+
+</body>
+</html>
